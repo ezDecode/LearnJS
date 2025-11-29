@@ -47,7 +47,7 @@
  * Symbol
  * =====Non-Premitive=====
  * Object (1 Only)
-*/ 
+*/
 
 
 // Array:Ordered Collection of Values
@@ -124,3 +124,160 @@
 // const storeShift = number.shift()
 // console.log(storeShift) // Print 1
 // console.log(number) // Print the [ 2, 3, 4, 5 ]
+
+
+// Finding Elements: 
+
+// indexof: checks the Positions of the elements: 
+
+// const colors = ['red', 'blue', 'green', 'cyan']
+
+// console.log(colors.indexOf("red")); // 0
+// console.log(colors.indexOf("Red")); // -1 (not exists)
+
+
+// includes: Checks if the item exists or not! and return true or false
+
+// console.log(colors.includes("red")) // true
+// console.log(colors.includes("Red")) // false
+
+
+// Transforming Arrays: 
+
+/** 
+==== Transforming Arrays====
+.slice(): Extract Portion -- does nnot modify orginal 
+.splice() - Add/remove items (modifies original)
+
+ */
+
+// const letters = ["a", "b", "c", "d", "e"];
+
+// slice()
+
+// console.log(letters)
+// console.log(letters.slice(1, 4)); // [ 'b', 'c', 'd' ]
+// console.log(letters.slice(2)) // [ 'c', 'd', 'e' ]
+
+// splice()
+
+// console.log(letters.splice(1, 1));
+
+
+
+// Looping through Arrays:
+
+// for loop
+// const scores = [75, 86, 74, 89]
+
+// for( let i = 0; i < scores.length; i++){
+//     console.log(`Scores ${i}: ${scores[i]}`);
+// }
+
+
+// for of loop:
+// scores.sort() //Sort the whole array and then we are using the for of loop to print the elements; see it's easy!
+
+// for (const score of scores){
+//     console.log(score);
+// }
+
+
+/*
+===== ADVANCE ARRAY METHODS =====
+*/
+//  For Each method: 
+
+// scores.forEach((score, idx) => {
+//     console.log(`Score: ${idx}: ${score}`);
+// })
+
+
+// Map method: Transform each item in the Array
+
+// const numbers = [1, 3, 5, 7];
+// const doubled = numbers.map(num => num * 2) //num is the callback parameter
+
+// console.log(numbers)
+// console.log(doubled)
+
+
+// Filter Method: 
+
+// const ages = [12, 13, 24, 25, 19, 20];
+
+// ages.sort()
+
+// const adults = ages.filter(age => age >= 18)
+// console.log("Without reversed: ", adults)
+// adults.reverse() // for reversing the elements in the array
+
+// console.log(ages)
+// console.log("With reversed: ",adults)
+
+
+// Find: Get's the first item that matches;
+
+// const users = [
+//     { id: 1, name: "Akash" },
+//     { id: 2, name: "Skie" },
+//     { id: 2, name: "Mitrr" },
+//     { id: 3, name: "Robo" }
+// ]
+
+
+// const userFind = users.find(u => u.id === 2)
+// console.log(userFind);
+
+
+
+/*
+
+.reduce(): Combine all items into single value
+.some(): check if ANY values matches?
+.every(): Checks if ALL values matches?
+
+*/
+
+
+
+// const numbers = [1, 2, 3, 4, 5, 6]
+
+// const reduceSum = numbers.reduce((total, sum) => total + sum, 0) // Number
+// const reduceSum1 = numbers.reduce((total, sum) => total + sum, "") //String
+// const reduceSum2 = numbers.reduce((total, sum) => total + sum, []) // Array
+
+// const reduceSum3 = numbers.reduce((total, sum) => { 
+//     total[sum] = sum * 2;  
+//     return total 
+// }, {}) // Object
+
+// console.log(reduceSum);
+// console.log(reduceSum1);
+// console.log(reduceSum2);
+// console.log(reduceSum3);
+
+
+
+
+/*
+Removing the Duplicate values:
+*/ 
+
+
+// const numbers = [1, 1, 3, 5, 4, 3, 2, 6 ,5, 4, 3]
+// const unique = []
+
+// Manual Method to find then check and remove
+// for(let i = 0; i < numbers.length; i++){
+//     if(!unique.includes(numbers[i])){
+//         unique.push(numbers[i])
+//     }
+// }
+// unique.sort()
+// console.log(unique);
+
+
+// cleaner and easy to Read Set Method!
+// const uniqueSet = [...new Set(numbers)]
+// console.log(uniqueSet);
