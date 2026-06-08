@@ -111,4 +111,4 @@ let prodTax = product.map(p => ({
     pricewithTax: p.price * 1.18,
 }))
 
-console.log(prodTax.map(p => p.pricewithTax));
+console.log(prodTax.map(p => `${p.item}: ${p.pricewithTax}`));
